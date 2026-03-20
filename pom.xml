@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.zhou</groupId>
+    <artifactId>test02</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+
+    <!-- 1 确定spring boot的版本-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.5.RELEASE</version>
+    </parent>
+
+    <!--2  确定版本-->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <mysql.version>5.1.32</mysql.version>
+        <mybatis.plus.version>3.4.0</mybatis.plus.version>
+        <druid.starter.version>1.1.9</druid.starter.version>
+        <jwt.jjwt.version>0.9.0</jwt.jjwt.version>
+        <jwt.joda.version>2.9.7</jwt.joda.version>
+        <swagger.version>2.7.0</swagger.version>
+        <swagger.anno.version>1.5.13</swagger.anno.version>
+        <beanutils.version>1.9.3</beanutils.version>
+        <aliyun.sdk.core.version>3.3.1</aliyun.sdk.core.version>
+        <aliyun.sdk.dysmsapi.version>1.0.0</aliyun.sdk.dysmsapi.version>
+        <fastjson.version>1.2.28</fastjson.version>
+    </properties>
+
+    <!-- 3 确定坐标-->
+    <dependencies>
+        <!--web起步依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!--测试-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+
+        <!-- JavaMail 启动器 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+
+        <!-- mybatis plus-->
+        <dependency>
+          <groupId>com.baomidou</groupId>
+          <artifactId>mybatis-plus-boot-starter</artifactId>
+          <version>${mybatis.plus.version}</version>
+        </dependency>
+        <!-- mysql驱动-->
+        <dependency>
+          <groupId>mysql</groupId>
+          <artifactId>mysql-connector-java</artifactId>
+          <version>${mysql.version}</version>
+        </dependency>
+
+        <!--lombok 等-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <!--swagger2-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+
+
+        <!--jwt工具-->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>${jwt.jjwt.version}</version>
+        </dependency>
+        <!--joda 时间工具类 -->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>${jwt.joda.version}</version>
+        </dependency>
+        <!--JavaBean工具类，用于JavaBean数据封装-->
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>${beanutils.version}</version>
+        </dependency>
+
+
+        <!-- redis 启动器 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
+        <!-- MQ 启动器 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+
+        <!-- 工具  -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+
+        <!-- excel   -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>easyexcel</artifactId>
+            <version>3.0.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+        <!-- vod相关
+        <dependency>
+          <groupId>com.aliyun</groupId>
+          <artifactId>aliyun-java-sdk-core</artifactId>
+          <version>4.5.1</version>
+        </dependency>
+        <dependency>
+          <groupId>com.aliyun.oss</groupId>
+          <artifactId>aliyun-sdk-oss</artifactId>
+          <version>3.10.2</version>
+        </dependency>
+        <dependency>
+          <groupId>com.aliyun</groupId>
+          <artifactId>aliyun-java-sdk-vod</artifactId>
+          <version>2.15.11</version>
+        </dependency>
+        <dependency>
+          <groupId>org.json</groupId>
+          <artifactId>json</artifactId>
+          <version>20170516</version>
+        </dependency>
+        <dependency>
+          <groupId>com.google.code.gson</groupId>
+          <artifactId>gson</artifactId>
+          <version>2.8.2</version>
+        </dependency>
+
+        <dependency>
+          <groupId>com.aliyun</groupId>
+          <artifactId>aliyun-sdk-vod-upload</artifactId>
+          <version>1.4.13</version>
+        </dependency>-->
+    </dependencies>
+
+
+</project>
+
