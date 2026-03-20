@@ -1,0 +1,15 @@
+server:
+  port: 10010
+# 配置数据库
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/game_open?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 1234
+    # 新增 MyBatis-Plus 配置（必须加，否则 Mapper 扫描不到）
+    mybatis-plus:
+      mapper-locations: classpath:mapper/*.xml  # 如果你有 XML 映射文件
+      type-aliases-package: example.entity  # 实体类包路径
+      configuration:
+        log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  # 可选：打印 SQL 日志
